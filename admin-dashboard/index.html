@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staycation Admin Dashboard</title>
+    <link rel="stylesheet" href="/src/assets/fontawesome-free/css/all.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/assets/sb-admin-2.min.css" />
+    <link rel="stylesheet" href="/src/assets/datatables/dataTables.bootstrap4.min.css" />
+  </head>
+  <body id="page-top">
+    <div id="wrapper"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <script src="/src/assets/jquery/jquery.min.js"></script>
+    <script src="/src/assets/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="/src/assets/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/src/assets/datatables/jquery.dataTables.min.js"></script>
+    <script src="/src/assets/datatables/dataTables.bootstrap4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('body.fixed-nav .sidebar').on('mousewheel DOMMouseScroll wheel', function (e) {
+          var o
+          768 < $(window).width() &&
+            ((o = (o = e.originalEvent).wheelDelta || -o.detail),
+            (this.scrollTop += 30 * (o < 0 ? 1 : -1)),
+            e.preventDefault())
+        })
+        $(document).on('scroll', function () {
+          100 < $(this).scrollTop() ? $('.scroll-to-top').fadeIn() : $('.scroll-to-top').fadeOut()
+        })
+        $(document).on('click', 'a.scroll-to-top', function (e) {
+          var o = $(this)
+          $('html, body')
+            .stop()
+            .animate({ scrollTop: $(o.attr('href')).offset().top }, 1e3, 'easeInOutExpo'),
+            e.preventDefault()
+        })
+      })
+    </script>
+  </body>
+</html>
