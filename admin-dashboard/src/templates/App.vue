@@ -7,7 +7,7 @@ import { RouterView } from 'vue-router'
 onMounted(() => {
   const sidebarToggle = document.querySelector('#sidebarToggle')
   const sidebarToggleTop = document.querySelector('#sidebarToggleTop')
-
+  
   if (sidebarToggle) {
     sidebarToggle.addEventListener('click', function () {
       
